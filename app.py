@@ -1,18 +1,23 @@
-
-from flask import Flask
-import os
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def home():
-    return {
-        "status": "GTI Server Running",
-        "api_key_found": bool(os.getenv("API_KEY")),
-        "client_code_found": bool(os.getenv("CLIENT_CODE")),
-        "pin_found": bool(os.getenv("PIN")),
-        "totp_secret_found": bool(os.getenv("TOTP_SECRET"))
-    }
+    return jsonify({
+        "project": "GTI Verification",
+        "status": "Running",
+        "step": "Phase 1"
+    })
+
+
+@app.route("/health")
+def health():
+    return jsonify({
+        "status": "OK"
+    })
+
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=10000)
+    app.run(host="0.0.0.0", port=5000)
