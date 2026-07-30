@@ -1,0 +1,11 @@
+PROJECT_NAME = "GTI Verification"
+
+MARKETS = [
+    "NIFTY",
+    "BANKNIFTY",
+    "SENSEX"
+]
+
+SCAN_INTERVAL = 60
+
+VERSION = "2.0"
