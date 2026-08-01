@@ -6,3 +6,8 @@ owning the complete execution lifecycle of the GTI V2 trading system.
 Architecture Reference:
     ORC-001
 """
+
+from __future__ import annotations
+
+from dataclasses import dataclass
+from enum import StrEnum
