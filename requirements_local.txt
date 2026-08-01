@@ -1,8 +1,0 @@
-flask
-smartapi-python
-pyotp
-logzero
-requests
-websocket-client
-pandas
-numpy
