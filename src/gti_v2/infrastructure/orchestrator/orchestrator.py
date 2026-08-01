@@ -47,3 +47,54 @@ class Orchestrator:
             state=OrchestratorState.STARTUP,
             registry=registry,
         )
+
+    @property
+    def context(self) -> OrchestratorContext:
+        """Return the current orchestrator runtime context."""
+
+        return self._context
+
+    def start(self) -> None:
+        """Enter the startup lifecycle."""
+
+        self._context.state = OrchestratorState.STARTUP
+
+    def initialize(self) -> None:
+        """Enter the initialization lifecycle."""
+
+        self._context.state = OrchestratorState.INITIALIZATION
+
+    def warmup(self) -> None:
+        """Enter the warmup lifecycle."""
+
+        self._context.state = OrchestratorState.WARMUP
+
+    def run(self) -> None:
+        """Enter the running lifecycle."""
+
+        self._context.state = OrchestratorState.RUNNING
+
+    def pause(self) -> None:
+        """Enter the paused lifecycle."""
+
+        self._context.state = OrchestratorState.PAUSED
+
+    def recover(self) -> None:
+        """Enter the recovery lifecycle."""
+
+        self._context.state = OrchestratorState.RECOVERY
+
+    def stop(self) -> None:
+        """Enter the stopping lifecycle."""
+
+        self._context.state = OrchestratorState.STOPPING
+
+    def shutdown(self) -> None:
+        """Enter the shutdown lifecycle."""
+
+        self._context.state = OrchestratorState.SHUTDOWN
+
+    def restart(self) -> None:
+        """Enter the restart lifecycle."""
+
+        self._context.state = OrchestratorState.RESTART
