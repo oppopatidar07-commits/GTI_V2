@@ -24,3 +24,10 @@ class OrchestratorState(StrEnum):
     STOPPING = "stopping"
     SHUTDOWN = "shutdown"
     RESTART = "restart"
+
+
+@dataclass(slots=True)
+class OrchestratorContext:
+    """Runtime context owned by the GTI V2 Central Orchestrator."""
+
+    state: OrchestratorState
